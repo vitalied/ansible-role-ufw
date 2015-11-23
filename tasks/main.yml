@@ -1,0 +1,58 @@
+---
+# tasks file for hswong3i.ufw
+
+- name: apt-get install
+  apt: name="{{ item }}" state=latest
+  with_items:
+    - ufw
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: reset ufw
+  ufw: state=reset
+  when: ufw_reset
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: enable ufw
+  ufw: state=enabled logging=on
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: setup policy per direction
+  ufw:
+    direction={{ item.direction }}
+    policy={{ item.policy }}
+  with_items:
+    - "{{ ufw_direction }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: setup rule per interface
+  ufw:
+    interface={{ item.interface }}
+    direction={{ item.direction }}
+    rule={{ item.rule }}
+  with_items:
+    - "{{ ufw_interface }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: setup rule per from_ip
+  ufw:
+    from_ip={{ item.from_ip }} 
+    rule={{ item.rule }}
+  with_items:
+    - "{{ ufw_from_ip }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: setup rule per to_port
+  ufw:
+    to_port={{ item.to_port }}
+    proto={{ item.proto }}
+    rule={{ item.rule }}
+  with_items:
+    - "{{ ufw_to_port }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
