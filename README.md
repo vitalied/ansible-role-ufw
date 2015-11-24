@@ -49,7 +49,7 @@ Role Variables
 <td align="left">Pass value as <code>state</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
-<td align="left">ufw_loggin</td>
+<td align="left">ufw_logging</td>
 <td align="left">yes</td>
 <td align="left">on</td>
 <td align="left"><ul>
@@ -60,7 +60,7 @@ Role Variables
 <li>high</li>
 <li>full</li>
 </ul></td>
-<td align="left">Pass value as <code>loggin</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">Pass value as <code>logging</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left">ufw_direction</td>
