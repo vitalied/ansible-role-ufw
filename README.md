@@ -103,7 +103,7 @@ Role Variables
 Dependencies
 ------------
 
-No additional role dependencies.
+-   [hswong3i.apt](https://galaxy.ansible.com/detail#/role/5970)
 
 Example Playbook
 ----------------
