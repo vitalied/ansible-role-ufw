@@ -8,14 +8,13 @@
   notify: reload ufw
   tags: hswong3i.ufw
 
-- name: reset ufw
-  ufw: state=reset
-  when: ufw_reset
+- name: set state
+  ufw: state={{ ufw_state }}
   notify: reload ufw
   tags: hswong3i.ufw
 
-- name: enable ufw
-  ufw: state=enabled logging=on
+- name: enable loggin
+  ufw: logging={{ ufw_logging }}
   notify: reload ufw
   tags: hswong3i.ufw
 
@@ -54,5 +53,19 @@
     rule={{ item.rule }}
   with_items:
     - "{{ ufw_to_port }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: setup rule per route
+  ufw:
+    route={{ item.route }}
+    from_ip={{ item.from_ip }}
+    from_port={{ item.from_port }}
+    to_ip={{ item.to_ip }]
+    to_port={{ item.to_port }}
+    proto={{ item.proto }}
+    rule={{ item.rule }}
+  with_items:
+    - "{{ ufw_route }}"
   notify: reload ufw
   tags: hswong3i.ufw

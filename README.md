@@ -37,11 +37,65 @@ Role Variables
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ufw_name</td>
+<td align="left">ufw_state</td>
 <td align="left">yes</td>
-<td align="left">example</td>
-<td align="left"></td>
-<td align="left">pass value as <code>name</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">enabled</td>
+<td align="left"><ul>
+<li>enabled</li>
+<li>disabled</li>
+<li>reloaded</li>
+<li>reset</li>
+</ul></td>
+<td align="left">Pass value as <code>state</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+</tr>
+<tr class="even">
+<td align="left">ufw_loggin</td>
+<td align="left">yes</td>
+<td align="left">on</td>
+<td align="left"><ul>
+<li>on</li>
+<li>off</li>
+<li>low</li>
+<li>medium</li>
+<li>high</li>
+<li>full</li>
+</ul></td>
+<td align="left">Pass value as <code>loggin</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+</tr>
+<tr class="odd">
+<td align="left">ufw_direction</td>
+<td align="left">no</td>
+<td align="left"><code>list</code></td>
+<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td align="left">Pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+</tr>
+<tr class="even">
+<td align="left">ufw_interface</td>
+<td align="left">no</td>
+<td align="left"><code>list</code></td>
+<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td align="left">Pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+</tr>
+<tr class="odd">
+<td align="left">ufw_from_ip</td>
+<td align="left">no</td>
+<td align="left"><code>list</code></td>
+<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td align="left">Pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+</tr>
+<tr class="even">
+<td align="left">ufw_to_port</td>
+<td align="left">no</td>
+<td align="left"><code>list</code></td>
+<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td align="left">Pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+</tr>
+<tr class="odd">
+<td align="left">ufw_route</td>
+<td align="left">no</td>
+<td align="left"><code>list</code></td>
+<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td align="left">Pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -56,7 +110,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - { role: hswong3i.ufw, ufw_name: 'www1' }
+        - { role: hswong3i.ufw, ufw_state: 'enabled', ufw_logging: 'on' }
 
 License
 -------

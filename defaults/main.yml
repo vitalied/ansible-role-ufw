@@ -1,7 +1,8 @@
 ---
 # defaults file for hswong3i.ufw
 
-ufw_reset: false
+ufw_state: enabled
+ufw_loggin: on
 ufw_direction:
   - { direction: 'incoming', policy: 'deny' }
   - { direction: 'outgoing', policy: 'allow' }
@@ -16,3 +17,5 @@ ufw_from_ip:
 ufw_to_port:
   - { to_port: '22', proto: 'tcp', rule: 'allow' }
   - { to_port: '1024:65535', proto: 'tcp', rule: 'allow' }
+ufw_route:
+  - { route: 'yes', from_ip: '0.0.0.0', from_port: '80', to_ip: '192.168.0.1', to_port: '8080', rule: 'allow' }
