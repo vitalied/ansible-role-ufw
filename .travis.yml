@@ -5,7 +5,7 @@ language: python
 python: 2.7
 
 before_install:
-  - pip install ansible
+  - pip install -e git+https://github.com/ansible/ansible.git#egg=ansible
 
 install:
   - ansible-galaxy install -r .roles.yml
