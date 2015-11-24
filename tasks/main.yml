@@ -61,7 +61,7 @@
     route={{ item.route }}
     from_ip={{ item.from_ip }}
     from_port={{ item.from_port }}
-    to_ip={{ item.to_ip }]
+    to_ip={{ item.to_ip }}
     to_port={{ item.to_port }}
     proto={{ item.proto }}
     rule={{ item.rule }}
