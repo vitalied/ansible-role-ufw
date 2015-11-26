@@ -15,7 +15,7 @@
   notify: reload ufw
   tags: hswong3i.ufw
 
-- name: enable loggin
+- name: enable logging
   ufw: logging={{ ufw_logging }}
   notify: reload ufw
   tags: hswong3i.ufw
