@@ -70,7 +70,7 @@ Role Variables
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip if <code>[]</code>, or pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">Skip setup policy per direction if <code>[]</code>, or pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">ufw_interface</td>
@@ -80,7 +80,7 @@ Role Variables
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip if <code>[]</code>, or pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">Skip setup rule per interface if <code>[]</code>, or pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left">ufw_from_ip</td>
@@ -90,7 +90,7 @@ Role Variables
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip if <code>[]</code>, or pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">Skip setup rule per from_ip if <code>[]</code>, or pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">ufw_to_port</td>
@@ -100,7 +100,7 @@ Role Variables
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip if <code>[]</code>, or pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">Skip setup rule per to_port if <code>[]</code>, or pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left">ufw_route</td>
@@ -110,7 +110,7 @@ Role Variables
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip if <code>[]</code>, or pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left">Skip setup rule per route if <code>[]</code>, or pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 </tbody>
 </table>
