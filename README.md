@@ -4,9 +4,9 @@ Ansible Role for UFW
 [![Build Status](https://travis-ci.org/pantarei/ansible-role-ufw.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-ufw)
  [![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-ufw.svg)](https://github.com/pantarei/ansible-role-ufw)
  [![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-ufw.svg)](https://github.com/pantarei/ansible-role-ufw/blob/master/LICENSE)
- [![Ansible Role](https://img.shields.io/ansible/role/6152.svg)](https://galaxy.ansible.com/detail#/role/6152)
+ [![Ansible Role](https://img.shields.io/ansible/role/6153.svg)](https://galaxy.ansible.com/detail#/role/6153)
 
-Ansible Role for UFW Management.
+Ansible Role for Ubuntu UFW Management.
 
 Requirements
 ------------
@@ -65,37 +65,52 @@ Role Variables
 <tr class="odd">
 <td align="left">ufw_direction</td>
 <td align="left">no</td>
-<td align="left"><code>list</code></td>
 <td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left">Pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left"><ul>
+<li><code>[]</code></li>
+<li><code>list</code></li>
+</ul></td>
+<td align="left">Skip if <code>[]</code>, or pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">ufw_interface</td>
 <td align="left">no</td>
-<td align="left"><code>list</code></td>
 <td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left">Pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left"><ul>
+<li><code>[]</code></li>
+<li><code>list</code></li>
+</ul></td>
+<td align="left">Skip if <code>[]</code>, or pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left">ufw_from_ip</td>
 <td align="left">no</td>
-<td align="left"><code>list</code></td>
 <td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left">Pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left"><ul>
+<li><code>[]</code></li>
+<li><code>list</code></li>
+</ul></td>
+<td align="left">Skip if <code>[]</code>, or pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">ufw_to_port</td>
 <td align="left">no</td>
-<td align="left"><code>list</code></td>
 <td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left">Pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left"><ul>
+<li><code>[]</code></li>
+<li><code>list</code></li>
+</ul></td>
+<td align="left">Skip if <code>[]</code>, or pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left">ufw_route</td>
 <td align="left">no</td>
-<td align="left"><code>list</code></td>
 <td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left">Pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td align="left"><ul>
+<li><code>[]</code></li>
+<li><code>list</code></li>
+</ul></td>
+<td align="left">Skip if <code>[]</code>, or pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -103,7 +118,7 @@ Role Variables
 Dependencies
 ------------
 
--   [hswong3i.apt](https://galaxy.ansible.com/detail#/role/5970)
+-   [hswong3i.apt](https://github.com/pantarei/ansible-role-apt)
 
 Example Playbook
 ----------------
@@ -115,7 +130,7 @@ Example Playbook
 License
 -------
 
--   Code released under [MIT](https://github.com/hswong3i/ansible-role-ufw/blob/master/LICENSE)
+-   Code released under [MIT](https://github.com/pantarei/ansible-role-ufw/blob/master/LICENSE)
 -   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 Author Information
