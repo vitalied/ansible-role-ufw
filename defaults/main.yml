@@ -6,7 +6,7 @@ ufw_logging: 'on'
 ufw_direction:
   - { direction: 'incoming', policy: 'deny' }
   - { direction: 'outgoing', policy: 'allow' }
-  - { direction: 'routed', policy: 'reject' }
+  - { direction: 'routed', policy: 'allow' }
 ufw_interface:
   - { interface: 'lo', direction: 'in', rule: 'allow' }
 ufw_from_ip:
