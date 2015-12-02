@@ -19,7 +19,7 @@
     mode={{ item.mode }}
   with_items:
   - { src: 'etc/ufw/sysctl.conf.j2', dest: '/etc/ufw/sysctl.conf',  owner: 'root', group: 'root', mode: '0644' }
-  notify: restart ufw
+  notify: reload ufw
   tags: hswong3i.ufw
 
 - name: set state
