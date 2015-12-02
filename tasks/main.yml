@@ -10,6 +10,18 @@
   notify: reload ufw
   tags: hswong3i.ufw
 
+- name: copy templates
+  template:
+    src={{ item.src }}
+    dest={{ item.dest }}
+    owner={{ item.owner }}
+    group={{ item.group }}
+    mode={{ item.mode }}
+  with_items:
+  - { src: 'etc/ufw/sysctl.conf.j2', dest: '/etc/ufw/sysctl.conf',  owner: 'root', group: 'root', mode: '0644' }
+  notify: restart ufw
+  tags: hswong3i.ufw
+
 - name: set state
   ufw: state={{ ufw_state }}
   notify: reload ufw
