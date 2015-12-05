@@ -4,5 +4,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - hswong3i.apt
     - ansible-role-ufw
