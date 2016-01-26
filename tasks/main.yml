@@ -6,7 +6,7 @@
     name={{ item.name }}
     state={{ item.state }}
   with_items:
-    - { name: 'ufw', state: 'latest' }
+    - { state: 'latest', name: 'ufw' }
   notify: reload ufw
   tags: hswong3i.ufw
 
