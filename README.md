@@ -4,15 +4,16 @@ Ansible Role for UFW
 [![Build Status](https://travis-ci.org/vitalied/ansible-role-ufw.svg?branch=master)](https://travis-ci.org/vitalied/ansible-role-ufw)
 [![GitHub tag](https://img.shields.io/github/tag/vitalied/ansible-role-ufw.svg)](https://github.com/vitalied/ansible-role-ufw)
 [![GitHub license](https://img.shields.io/github/license/vitalied/ansible-role-ufw.svg)](https://github.com/vitalied/ansible-role-ufw/blob/master/LICENSE)
+[![Ansible Role](https://img.shields.io/ansible/role/8705.svg)](https://galaxy.ansible.com/vitalied/ufw)
 
 Ansible Role for Ubuntu UFW Management.
 
 Requirements
 ------------
 
-This role require Ansible 2.0 or higher.
+This role require Ansible 2.1 or higher.
 
-This role was designed for Ubuntu Server 14.04 LTS and Ubuntu Server 16.04 LTS.
+This role was designed for Ubuntu Server 16.04 LTS.
 
 Role Variables
 --------------
