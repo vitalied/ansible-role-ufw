@@ -1,9 +1,9 @@
 Ansible Role for UFW
 ====================
 
-[![Build Status](https://travis-ci.org/pantarei/ansible-role-ufw.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-ufw)
-[![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-ufw.svg)](https://github.com/pantarei/ansible-role-ufw)
-[![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-ufw.svg)](https://github.com/pantarei/ansible-role-ufw/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/vitalied/ansible-role-ufw.svg?branch=master)](https://travis-ci.org/vitalied/ansible-role-ufw)
+[![GitHub tag](https://img.shields.io/github/tag/vitalied/ansible-role-ufw.svg)](https://github.com/vitalied/ansible-role-ufw)
+[![GitHub license](https://img.shields.io/github/license/vitalied/ansible-role-ufw.svg)](https://github.com/vitalied/ansible-role-ufw/blob/master/LICENSE)
 
 Ansible Role for Ubuntu UFW Management.
 
@@ -38,7 +38,7 @@ Role Variables
 <tr class="odd">
 <td>ufw</td>
 <td>no</td>
-<td><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td><a href="https://github.com/vitalied/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
 <td><ul>
 <li><code>[]</code></li>
 <li><code>list</code></li>
@@ -58,7 +58,7 @@ Example Playbook
 
     - hosts: all
       roles:
-        - role: hswong3i.ufw
+        - role: vitalied.ufw
           ufw:
             - { interface: "lo", direction: "in", rule: "allow" }
             - { from_ip: "224.0.0.0/4", rule: "allow" }
@@ -76,13 +76,5 @@ Example Playbook
 License
 -------
 
--   Code released under [MIT](https://github.com/pantarei/ansible-role-ufw/blob/master/LICENSE)
+-   Code released under [MIT](https://github.com/vitalied/ansible-role-ufw/blob/master/LICENSE)
 -   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
-
-Author Information
-------------------
-
--   Wong Hoi Sing Edison
-    -   <a href="https://twitter.com/hswong3i" class="uri" class="uri">https://twitter.com/hswong3i</a>
-    -   <a href="https://github.com/hswong3i" class="uri" class="uri">https://github.com/hswong3i</a>
-

@@ -1,9 +1,8 @@
 ---
 
 galaxy_info:
-  author: Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+  author: vitalied
   description: Ansible Role for Ubuntu UFW Management.
-  company: PantaRei Design
   license: MIT
   min_ansible_version: 2.0
   platforms:

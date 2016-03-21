@@ -1,5 +1,5 @@
 ---
-# defaults file for hswong3i.ufw
+# defaults file for vitalied.ufw
 
 ufw: [
 #  setup rule per interface

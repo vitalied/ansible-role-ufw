@@ -1,5 +1,5 @@
 ---
-# test file for hswong3i.ufw
+# test file for vitalied.ufw
 
 - hosts: localhost
   remote_user: root
