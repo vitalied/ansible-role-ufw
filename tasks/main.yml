@@ -3,78 +3,80 @@
 
 - name: apt-get install
   apt:
-    name="{{ item.name }}"
-    state="{{ item.state }}"
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
   with_items:
-    - { state: 'latest', name: 'ufw' }
+    - { state: "latest", name: "ufw" }
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: copy templates
   template:
-    src="{{ item.src }}"
-    dest="{{ item.dest }}"
-    owner="{{ item.owner }}"
-    group="{{ item.group }}"
-    mode="{{ item.mode }}"
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
   with_items:
-  - { src: 'etc/ufw/sysctl.conf.j2', dest: '/etc/ufw/sysctl.conf',  owner: 'root', group: 'root', mode: '0644' }
+  - { src: "etc/ufw/sysctl.conf.j2", dest: "/etc/ufw/sysctl.conf",  owner: "root", group: "root", mode: "0644" }
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: set state
-  ufw: state="{{ ufw_state }}"
+  ufw:
+    state: "{{ ufw_state }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: enable logging
-  ufw: logging="{{ ufw_logging }}"
+  ufw:
+    logging: "{{ ufw_logging }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: setup policy per direction
   ufw:
-    direction="{{ item.direction }}"
-    policy="{{ item.policy }}"
+    direction: "{{ item.direction }}"
+    policy: "{{ item.policy }}"
   with_items: "{{ ufw_direction }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: setup rule per interface
   ufw:
-    interface="{{ item.interface }}"
-    direction="{{ item.direction }}"
-    rule="{{ item.rule }}"
+    interface: "{{ item.interface }}"
+    direction: "{{ item.direction }}"
+    rule: "{{ item.rule }}"
   with_items: "{{ ufw_interface }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: setup rule per from_ip
   ufw:
-    from_ip="{{ item.from_ip }}"
-    rule="{{ item.rule }}"
+    from_ip: "{{ item.from_ip }}"
+    rule: "{{ item.rule }}"
   with_items: "{{ ufw_from_ip }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: setup rule per to_port
   ufw:
-    to_port="{{ item.to_port }}"
-    proto="{{ item.proto }}"
-    rule="{{ item.rule }}"
+    to_port: "{{ item.to_port }}"
+    proto: "{{ item.proto }}"
+    rule: "{{ item.rule }}"
   with_items: "{{ ufw_to_port }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
 - name: setup rule per route
   ufw:
-    from_ip="{{ item.from_ip }}"
-    from_port="{{ item.from_port }}"
-    to_ip="{{ item.to_ip }}"
-    to_port="{{ item.to_port }}"
-    proto="{{ item.proto }}"
-    rule="{{ item.rule }}"
-    route="{{ item.route }}"
+    from_ip: "{{ item.from_ip }}"
+    from_port: "{{ item.from_port }}"
+    to_ip: "{{ item.to_ip }}"
+    to_port: "{{ item.to_port }}"
+    proto: "{{ item.proto }}"
+    rule: "{{ item.rule }}"
+    route: "{{ item.route }}"
   with_items: "{{ ufw_route }}"
   notify: reload ufw
   tags: hswong3i.ufw
