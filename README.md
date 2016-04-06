@@ -28,31 +28,31 @@ Role Variables
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">parameter</th>
-<th align="left">required</th>
-<th align="left">default</th>
-<th align="left">choices</th>
-<th align="left">comments</th>
+<th>parameter</th>
+<th>required</th>
+<th>default</th>
+<th>choices</th>
+<th>comments</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ufw_state</td>
-<td align="left">yes</td>
-<td align="left">enabled</td>
-<td align="left"><ul>
+<td>ufw_state</td>
+<td>yes</td>
+<td>enabled</td>
+<td><ul>
 <li>enabled</li>
 <li>disabled</li>
 <li>reloaded</li>
 <li>reset</li>
 </ul></td>
-<td align="left">Pass value as <code>state</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Pass value as <code>state</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
-<td align="left">ufw_logging</td>
-<td align="left">yes</td>
-<td align="left">on</td>
-<td align="left"><ul>
+<td>ufw_logging</td>
+<td>yes</td>
+<td>on</td>
+<td><ul>
 <li>on</li>
 <li>off</li>
 <li>low</li>
@@ -60,57 +60,57 @@ Role Variables
 <li>high</li>
 <li>full</li>
 </ul></td>
-<td align="left">Pass value as <code>logging</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Pass value as <code>logging</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
-<td align="left">ufw_direction</td>
-<td align="left">no</td>
-<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left"><ul>
+<td>ufw_direction</td>
+<td>no</td>
+<td><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td><ul>
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip setup policy per direction if <code>[]</code>, or pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Skip setup policy per direction if <code>[]</code>, or pass list as <code>direction</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
-<td align="left">ufw_interface</td>
-<td align="left">no</td>
-<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left"><ul>
+<td>ufw_interface</td>
+<td>no</td>
+<td><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td><ul>
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip setup rule per interface if <code>[]</code>, or pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Skip setup rule per interface if <code>[]</code>, or pass list as <code>interface</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
-<td align="left">ufw_from_ip</td>
-<td align="left">no</td>
-<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left"><ul>
+<td>ufw_from_ip</td>
+<td>no</td>
+<td><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td><ul>
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip setup rule per from_ip if <code>[]</code>, or pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Skip setup rule per from_ip if <code>[]</code>, or pass list as <code>from_ip</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="even">
-<td align="left">ufw_to_port</td>
-<td align="left">no</td>
-<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left"><ul>
+<td>ufw_to_port</td>
+<td>no</td>
+<td><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td><ul>
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip setup rule per to_port if <code>[]</code>, or pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Skip setup rule per to_port if <code>[]</code>, or pass list as <code>to_port</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 <tr class="odd">
-<td align="left">ufw_route</td>
-<td align="left">no</td>
-<td align="left"><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
-<td align="left"><ul>
+<td>ufw_route</td>
+<td>no</td>
+<td><a href="https://github.com/pantarei/ansible-role-ufw/blob/master/defaults/main.yml">defaults/main.yml</a></td>
+<td><ul>
 <li><code>[]</code></li>
 <li><code>list</code></li>
 </ul></td>
-<td align="left">Skip setup rule per route if <code>[]</code>, or pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
+<td>Skip setup rule per route if <code>[]</code>, or pass list as <code>route</code> to <a href="http://docs.ansible.com/ansible/ufw_module.html">ufw module</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -137,6 +137,6 @@ Author Information
 ------------------
 
 -   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+    -   <a href="https://twitter.com/hswong3i" class="uri" class="uri">https://twitter.com/hswong3i</a>
+    -   <a href="https://github.com/hswong3i" class="uri" class="uri">https://github.com/hswong3i</a>
 
