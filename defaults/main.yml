@@ -3,11 +3,6 @@
 
 ufw_state: enabled
 ufw_logging: "on"
-ufw_direction: [
-  { direction: "incoming", policy: "deny" },
-  { direction: "outgoing", policy: "allow" },
-  { direction: "routed", policy: "allow" },
-]
 ufw_interface: [
   { interface: "lo", direction: "in", rule: "allow" },
 ]
@@ -20,6 +15,11 @@ ufw_from_ip: [
 ufw_to_port: [
   { to_port: "22", proto: "tcp", rule: "allow" },
   { to_port: "1024:65535", proto: "tcp", rule: "allow" },
+]
+ufw_direction: [
+  { direction: "incoming", policy: "deny" },
+  { direction: "outgoing", policy: "allow" },
+  { direction: "routed", policy: "allow" },
 ]
 ufw_route: [
   { route: "yes", from_ip: "any", from_port: "80", to_ip: "127.0.0.1", to_port: "80", proto: "any", rule: "allow" },
