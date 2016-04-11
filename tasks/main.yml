@@ -34,14 +34,6 @@
   notify: reload ufw
   tags: hswong3i.ufw
 
-- name: setup policy per direction
-  ufw:
-    direction: "{{ item.direction }}"
-    policy: "{{ item.policy }}"
-  with_items: "{{ ufw_direction }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
 - name: setup rule per interface
   ufw:
     interface: "{{ item.interface }}"
@@ -65,6 +57,14 @@
     proto: "{{ item.proto }}"
     rule: "{{ item.rule }}"
   with_items: "{{ ufw_to_port }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: setup policy per direction
+  ufw:
+    direction: "{{ item.direction }}"
+    policy: "{{ item.policy }}"
+  with_items: "{{ ufw_direction }}"
   notify: reload ufw
   tags: hswong3i.ufw
 
