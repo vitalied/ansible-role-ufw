@@ -1,7 +1,7 @@
 ---
 # defaults file for hswong3i.ufw
 
-ufw_state: enabled
+ufw_state: "enabled"
 ufw_logging: "on"
 ufw_interface: [
   { interface: "lo", direction: "in", rule: "allow" },
