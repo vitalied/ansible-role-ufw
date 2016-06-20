@@ -1,3 +1,4 @@
+---
 ufw_interface: [
   { interface: "lo", direction: "in", rule: "allow" },
 ]
