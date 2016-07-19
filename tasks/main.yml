@@ -22,18 +22,6 @@
   notify: reload ufw
   tags: hswong3i.ufw
 
-- name: set state
-  ufw:
-    state: "{{ ufw_state }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: enable logging
-  ufw:
-    logging: "{{ ufw_logging }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
 - name: setup rule per interface
   ufw:
     interface: "{{ item.interface }}"
@@ -78,5 +66,17 @@
     rule: "{{ item.rule }}"
     route: "{{ item.route }}"
   with_items: "{{ ufw_route }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: enable logging
+  ufw:
+    logging: "{{ ufw_logging }}"
+  notify: reload ufw
+  tags: hswong3i.ufw
+
+- name: set state
+  ufw:
+    state: "{{ ufw_state }}"
   notify: reload ufw
   tags: hswong3i.ufw
