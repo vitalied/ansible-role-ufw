@@ -22,61 +22,20 @@
   notify: reload ufw
   tags: hswong3i.ufw
 
-- name: setup rule per interface
+- name: setup ufw
   ufw:
-    interface: "{{ item.interface }}"
-    direction: "{{ item.direction }}"
-    rule: "{{ item.rule }}"
-  with_items: "{{ ufw_interface }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: setup rule per from_ip
-  ufw:
-    from_ip: "{{ item.from_ip }}"
-    rule: "{{ item.rule }}"
-  with_items: "{{ ufw_from_ip }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: setup rule per to_port
-  ufw:
-    to_port: "{{ item.to_port }}"
-    proto: "{{ item.proto }}"
-    rule: "{{ item.rule }}"
-  with_items: "{{ ufw_to_port }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: setup policy per direction
-  ufw:
-    direction: "{{ item.direction }}"
-    policy: "{{ item.policy }}"
-  with_items: "{{ ufw_direction }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: setup rule per route
-  ufw:
-    from_ip: "{{ item.from_ip }}"
-    from_port: "{{ item.from_port }}"
-    to_ip: "{{ item.to_ip }}"
-    to_port: "{{ item.to_port }}"
-    proto: "{{ item.proto }}"
-    rule: "{{ item.rule }}"
-    route: "{{ item.route }}"
-  with_items: "{{ ufw_route }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: enable logging
-  ufw:
-    logging: "{{ ufw_logging }}"
-  notify: reload ufw
-  tags: hswong3i.ufw
-
-- name: set state
-  ufw:
-    state: "{{ ufw_state }}"
+    direction: "{{ item.direction | default(None) or omit }}"
+    from_ip: "{{ item.from_ip | default(None) or omit }}"
+    from_port: "{{ item.from_port | default(None) or omit }}"
+    interface: "{{ item.interface | default(None) or omit }}"
+    logging: "{{ ufw_logging | default(None) or omit }}"
+    policy: "{{ item.policy | default(None) or omit }}"
+    proto: "{{ item.proto | default(None) or omit }}"
+    route: "{{ item.route | default(None) or omit }}"
+    rule: "{{ item.rule | default(None) or omit }}"
+    state: "{{ ufw_state | default(None) or omit }}"
+    to_ip: "{{ item.to_ip | default(None) or omit }}"
+    to_port: "{{ item.to_port | default(None) or omit }}"
+  with_items: "{{ ufw }}"
   notify: reload ufw
   tags: hswong3i.ufw
