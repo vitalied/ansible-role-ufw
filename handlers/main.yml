@@ -3,4 +3,6 @@
 
 - name: reload ufw
   ufw:
-    state: "reloaded"
+    state: "{{ item.state }}"
+  with_items:
+    - { state: "reloaded" }
