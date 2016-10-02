@@ -27,5 +27,5 @@ ufw: [
 #  { logging: "on" },
 
 #  set state
-#  { state: "enabled" },
+#  { state: "enabled" }
 ]
